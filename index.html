@@ -1,0 +1,375 @@
+<html>
+
+<head>
+    <script>
+
+        var theWord = "Ash";
+
+        var whatTheyTyped;
+
+        var wordLength;
+
+        var halfWordLength;
+
+        var characterSearched;
+
+        var currentCharacter;
+
+        var characterAppearances;
+
+        var currentString;
+
+        var stringAppearances;
+
+        var stringLength;
+
+        var precedes;
+
+        var follows;
+
+        function bOne() {
+            whatTheyTyped = document.getElementById("letterInput").value
+            theWord = whatTheyTyped.substring(0, 1) + theWord;
+            document.getElementById("message").innerHTML = "The Magic word is " + theWord;
+            document.getElementById("letterInput").value = "";
+            if (theWord.length == 0) {
+                document.getElementById("delLetterEnd").disabled = true;
+                document.getElementById("delLetterMid").disabled = true;
+                document.getElementById("delLetterBeginning").disabled = true;
+            }
+            else {
+                document.getElementById("delLetterBeginning").disabled = false;
+                document.getElementById("delLetterMid").disabled = false;
+                document.getElementById("delLetterEnd").disabled = false;
+            }
+            if (theWord.length == 18) {
+                document.getElementById("addLetterEnd").disabled = true;
+                document.getElementById("addLetterMid").disabled = true;
+                document.getElementById("addLetterBeginning").disabled = true;
+            }
+            else {
+                document.getElementById("addLetterBeginning").disabled = false;
+                document.getElementById("addLetterMid").disabled = false;
+                document.getElementById("addLetterEnd").disabled = false;
+            }
+
+
+
+        }
+
+        function bTwo() {
+            whatTheyTyped = document.getElementById("letterInput").value
+            theWord = theWord + whatTheyTyped.substring(0, 1)
+            document.getElementById("message").innerHTML = "The Magic word is " + theWord;
+            document.getElementById("letterInput").value = "";
+            if (theWord.length == 0) {
+                document.getElementById("delLetterEnd").disabled = true;
+                document.getElementById("delLetterMid").disabled = true;
+                document.getElementById("delLetterBeginning").disabled = true;
+            }
+            else {
+                document.getElementById("delLetterBeginning").disabled = false;
+                document.getElementById("delLetterMid").disabled = false;
+                document.getElementById("delLetterEnd").disabled = false;
+            }
+            if (theWord.length == 18) {
+                document.getElementById("addLetterEnd").disabled = true;
+                document.getElementById("addLetterMid").disabled = true;
+                document.getElementById("addLetterBeginning").disabled = true;
+            }
+            else {
+                document.getElementById("addLetterBeginning").disabled = false;
+                document.getElementById("addLetterMid").disabled = false;
+                document.getElementById("addLetterEnd").disabled = false;
+            }
+        }
+
+
+        function bThree() {
+            wordLength = theWord.length;
+            theWord = theWord.substring(1, wordLength);
+            document.getElementById("message").innerHTML = "The Magic word is " + theWord;
+            document.getElementById("letterInput").value = "";
+            if (theWord.length == 0) {
+                document.getElementById("delLetterMid").disabled = true;
+                document.getElementById("delLetterEnd").disabled = true;
+                document.getElementById("delLetterBeginning").disabled = true;
+            }
+            else {
+                document.getElementById("delLetterBeginning").disabled = false;
+                document.getElementById("delLetterMid").disabled = false;
+                document.getElementById("delLetterEnd").disabled = false;
+            }
+            if (theWord.length == 18) {
+                document.getElementById("addLetterEnd").disabled = true;
+                document.getElementById("addLetterMid").disabled = true;
+                document.getElementById("addLetterBeginning").disabled = true;
+            }
+            else {
+                document.getElementById("addLetterBeginning").disabled = false;
+                document.getElementById("addLetterMid").disabled = false;
+                document.getElementById("addLetterEnd").disabled = false;
+            }
+        }
+        function bFour() {
+            wordLength = theWord.length;
+            theWord = theWord.substring(0, wordLength - 1);
+            document.getElementById("message").innerHTML = "The Magic word is " + theWord;
+            document.getElementById("letterInput").value = "";
+
+            if (theWord.length == 0) {
+                document.getElementById("delLetterEnd").disabled = true;
+                document.getElementById("delLetterMid").disabled = true;
+                document.getElementById("delLetterBeginning").disabled = true;
+            }
+            else {
+                document.getElementById("delLetterBeginning").disabled = false;
+                document.getElementById("delLetterMid").disabled = false;
+                document.getElementById("delLetterEnd").disabled = false;
+            }
+            if (theWord.length == 18) {
+                document.getElementById("addLetterEnd").disabled = true;
+                document.getElementById("addLetterMid").disabled = true;
+                document.getElementById("addLetterBeginning").disabled = true;
+            }
+            else {
+                document.getElementById("addLetterBeginning").disabled = false;
+                document.getElementById("addLetterMid").disabled = false;
+                document.getElementById("addLetterEnd").disabled = false;
+            }
+        }
+        function bFive() {
+            whatTheyTyped = document.getElementById("letterInput").value
+            wordLength = theWord.length;
+            halfWordLength = wordLength / 2;
+            theWord = theWord.substring(0, halfWordLength) + whatTheyTyped + theWord.substring(halfWordLength, wordLength);
+            document.getElementById("message").innerHTML = "The Magic word is " + theWord;
+            document.getElementById("letterInput").value = "";
+            if (theWord.length == 0) {
+                document.getElementById("delLetterEnd").disabled = true;
+                document.getElementById("delLetterMid").disabled = true;
+                document.getElementById("delLetterBeginning").disabled = true;
+            }
+            else {
+                document.getElementById("delLetterBeginning").disabled = false;
+                document.getElementById("delLetterMid").disabled = false;
+                document.getElementById("delLetterEnd").disabled = false;
+            }
+            if (theWord.length == 18) {
+                document.getElementById("addLetterEnd").disabled = true;
+                document.getElementById("addLetterMid").disabled = true;
+                document.getElementById("addLetterBeginning").disabled = true;
+            }
+            else {
+                document.getElementById("addLetterBeginning").disabled = false;
+                document.getElementById("addLetterMid").disabled = false;
+                document.getElementById("addLetterEnd").disabled = false;
+            }
+        }
+        function bSix() {
+
+            wordLength = theWord.length;
+            halfWordLength = wordLength / 2;
+            theWord = theWord.substring(0, halfWordLength) + theWord.substring(halfWordLength + 1, wordLength);
+            document.getElementById("message").innerHTML = "The Magic word is " + theWord;
+            document.getElementById("letterInput").value = "";
+
+
+            if (theWord.length == 0) {
+                document.getElementById("delLetterEnd").disabled = true;
+                document.getElementById("delLetterMid").disabled = true;
+                document.getElementById("delLetterBeginning").disabled = true;
+            }
+            else {
+                document.getElementById("delLetterBeginning").disabled = false;
+                document.getElementById("delLetterMid").disabled = false;
+                document.getElementById("delLetterEnd").disabled = false;
+            }
+            if (theWord.length == 18) {
+                document.getElementById("addLetterEnd").disabled = true;
+                document.getElementById("addLetterMid").disabled = true;
+                document.getElementById("addLetterBeginning").disabled = true;
+            }
+            else {
+                document.getElementById("addLetterBeginning").disabled = false;
+                document.getElementById("addLetterMid").disabled = false;
+                document.getElementById("addLetterEnd").disabled = false;
+            }
+        }
+        function inputStuff() {
+
+            document.getElementById("addLetterEnd").disabled = false;
+            document.getElementById("addLetterMid").disabled = false;
+            document.getElementById("addLetterBeginning").disabled = false;
+
+        }
+        function moreInput() {
+            if (document.getElementById("letterInput").value == 0) {
+                document.getElementById("addLetterEnd").disabled = true;
+                document.getElementById("addLetterMid").disabled = true;
+                document.getElementById("addLetterBeginning").disabled = true;
+            }
+            else {
+                document.getElementById("addLetterEnd").disabled = false;
+                document.getElementById("addLetterMid").disabled = false;
+                document.getElementById("addLetterBeginning").disabled = false;
+            }
+        }
+
+        function searchForCharacter() {
+            characterSearched = document.getElementById("characterSearch").value;
+            wordLength = theWord.length;
+            characterAppearances = 0;
+            for (let i = 0; i <= wordLength; i++) {
+                currentCharacter = theWord.substring(i, i + 1);
+                if (currentCharacter == characterSearched) {
+                    characterAppearances++;
+                }
+
+            }
+            document.getElementById("characterMessages").innerHTML = "The character " + characterSearched + " appears " + characterAppearances + " times"
+            document.getElementById("characterSearch").value = "";
+
+
+        }
+        function searchForString() {
+            stringSearched = document.getElementById("stringSearch").value
+            stringLength = stringSearched.length
+            wordLength = theWord.length;
+            stringAppearances = 0;
+            for (let i = 0; i <= wordLength; i++) {
+
+                currentString = theWord.substring(i, i + stringLength);
+                if (currentString == stringSearched) {
+                    stringAppearances++;
+                    follows = theWord.substring(0, i);
+                    precedes = theWord.substring(i + stringLength);
+                }
+
+                document.getElementById("characterMessages").innerHTML = "The string " + stringSearched + " appears " + stringAppearances + " times" + " and precedes " + precedes + " and follows " + follows;
+                document.getElementById("characterSearch").value = "";
+
+            }
+
+        }
+
+
+    </script>
+    <style>
+        html {
+            background-color: rgb(82, 17, 136)
+        }
+
+        .body {
+            text-align: center;
+        }
+
+        #message {
+            background-color: rgb(233, 111, 141);
+            font-size: 50px;
+
+
+        }
+
+        #letterInput {
+            font-size: 25px;
+            text-align: center;
+
+        }
+
+        #addLetterBeginning {
+            font-size: 25px;
+            text-align: center;
+
+        }
+
+        #addLetterEnd {
+            font-size: 25px;
+            text-align: center;
+
+        }
+
+        #delLetterBeginning {
+            font-size: 25px;
+            text-align: center;
+
+        }
+
+        #delLetterEnd {
+            font-size: 25px;
+            text-align: center;
+
+        }
+
+        #addLetterMid {
+            font-size: 25px;
+            text-align: center;
+
+        }
+
+        #delLetterMid {
+            font-size: 25px;
+            text-align: center;
+
+        }
+
+        .flex-container {
+            display: grid;
+
+            justify-content: space-evenly;
+        }
+
+        #Header {
+            text-align: center;
+            font-size: 60px;
+            color: rgb(61, 6, 6);
+            background-color: rgb(241, 236, 230);
+        }
+
+        #secondflx {
+            display: grid;
+
+            justify-content: space-evenly;
+
+        }
+
+        #characterMessages {
+            font-size: 25px;
+            text-align: center;
+            background-color: fuchsia;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="Header">Enter a Letter</h1>
+    <div class="flex-container">
+        <input id="letterInput" maxlength="1" onkeyup="moreInput()" onkeyup="inputStuff()" onclick="moreInput()"
+            onclick="inputStuff()">
+        <button id="addLetterBeginning" disabled="true" onclick="bOne()" onclick="moreInput()"> Add letter to
+            Beginning</button>
+        <button id="addLetterEnd" disabled="true" onclick="bTwo()"> Add letter to End </button>
+        <button id="delLetterBeginning" onclick="bThree()"> Delete letter from Beginning</button>
+        <button id="delLetterEnd" onclick="bFour()">Delete letter from End </button>
+        <button id="addLetterMid" disabled="true" onclick="bFive()"> Add Letter Mid</button>
+        <button id="delLetterMid" onclick="bSix()">Delete Letter Mid</button>
+        <div id="message">
+            The Magic Word is Ash
+
+        </div>
+        <div class="flex-container" id="secondflx">
+            <button onclick="searchForCharacter()"> Search for a character</button>
+            <input id="characterSearch" maxlength="1">
+            <div id="characterMessages">Character Searches Appears </div>
+        </div>
+        <button onclick="searchForString()"> Search for a string </button>
+        <input id="stringSearch">
+    </div>
+
+</body>
+
+
+
+
+</html>
